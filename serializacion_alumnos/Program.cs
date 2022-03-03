@@ -19,15 +19,6 @@ class MainClass{
                 new Alumno("Eliot", "Ibarra", 0),
                 new Alumno("Jose", "Montes", 0)
         };
-        // for(int i = 0; i < 10; i++)
-        // {
-        //     Console.WriteLine("Nombre(s) del alumno {0}: ", i + 1);
-        //     nombre = Console.ReadLine();
-        //     Console.WriteLine("Apellidos del alumno {0}: ", i + 1);
-        //     apellido = Console.ReadLine();
-        //     lista[i] = new Alumno(nombre, apellido);
-        // }
-
 
        IFormatter f = new BinaryFormatter();
        Stream stream = new FileStream("registroAlumnos.dat", FileMode.Create);
@@ -47,11 +38,6 @@ class MainClass{
         stream.Close();
         stream.Dispose();
         Console.WriteLine("\nSe deserealizo! ");
-        // Console.WriteLine("Lista de alumnos: ");
-        // foreach (var alumno in copia)
-        // {
-            // Console.WriteLine(alumno);
-        // }
 
 
         Console.WriteLine("Ingrese las calificaiones: ");
@@ -62,11 +48,6 @@ class MainClass{
             Console.WriteLine("");
         }
 
-        // Console.WriteLine("Lista calificaciones: ");
-        // foreach (var alumno in copia)
-        // {
-        //    Console.WriteLine(alumno);
-        // }
 
         decimal max = 0;
         int indexMax = 0;
@@ -101,7 +82,7 @@ class MainClass{
                         $"  Calificación: {copia[indexMax].Calificacion}");
                         
         Console.WriteLine($"Aprovechamiento general: {promedio}");
-        Console.WriteLine($"Número total de aprobados: {numAprobados}");
-        Console.WriteLine($"Número total de reprobados: {numReprobados}");
+        Console.WriteLine($"Número total de aprobados: {numAprobados*100/10}");
+        Console.WriteLine($"Número total de reprobados: {numReprobados*100/10}");
     }
 }
