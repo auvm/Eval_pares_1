@@ -1,0 +1,15 @@
+/home/auvmx/Net/Eval_Pares_1/serializacion_alumnos/bin/Debug/net6.0/serializacion_alumnos
+/home/auvmx/Net/Eval_Pares_1/serializacion_alumnos/bin/Debug/net6.0/serializacion_alumnos.deps.json
+/home/auvmx/Net/Eval_Pares_1/serializacion_alumnos/bin/Debug/net6.0/serializacion_alumnos.runtimeconfig.json
+/home/auvmx/Net/Eval_Pares_1/serializacion_alumnos/bin/Debug/net6.0/serializacion_alumnos.dll
+/home/auvmx/Net/Eval_Pares_1/serializacion_alumnos/bin/Debug/net6.0/serializacion_alumnos.pdb
+/home/auvmx/Net/Eval_Pares_1/serializacion_alumnos/obj/Debug/net6.0/serializacion_alumnos.csproj.AssemblyReference.cache
+/home/auvmx/Net/Eval_Pares_1/serializacion_alumnos/obj/Debug/net6.0/serializacion_alumnos.GeneratedMSBuildEditorConfig.editorconfig
+/home/auvmx/Net/Eval_Pares_1/serializacion_alumnos/obj/Debug/net6.0/serializacion_alumnos.AssemblyInfoInputs.cache
+/home/auvmx/Net/Eval_Pares_1/serializacion_alumnos/obj/Debug/net6.0/serializacion_alumnos.AssemblyInfo.cs
+/home/auvmx/Net/Eval_Pares_1/serializacion_alumnos/obj/Debug/net6.0/serializacion_alumnos.csproj.CoreCompileInputs.cache
+/home/auvmx/Net/Eval_Pares_1/serializacion_alumnos/obj/Debug/net6.0/serializacion_alumnos.dll
+/home/auvmx/Net/Eval_Pares_1/serializacion_alumnos/obj/Debug/net6.0/refint/serializacion_alumnos.dll
+/home/auvmx/Net/Eval_Pares_1/serializacion_alumnos/obj/Debug/net6.0/serializacion_alumnos.pdb
+/home/auvmx/Net/Eval_Pares_1/serializacion_alumnos/obj/Debug/net6.0/serializacion_alumnos.genruntimeconfig.cache
+/home/auvmx/Net/Eval_Pares_1/serializacion_alumnos/obj/Debug/net6.0/ref/serializacion_alumnos.dll
