@@ -26,7 +26,6 @@ class MainClass{
        stream.Close();
        stream.Dispose();
 
-       Console.WriteLine("Exito: Se serializó!");
 
         //DESCERIALIZACIÓN BINARIA
         //IFormatter f = new BinaryFormatter();
@@ -37,7 +36,7 @@ class MainClass{
         //casteamos el stream a un registro, porque está como un objeto general
         stream.Close();
         stream.Dispose();
-        Console.WriteLine("\nSe deserealizo! ");
+
 
 
         Console.WriteLine("Ingrese las calificaiones: ");
@@ -82,7 +81,7 @@ class MainClass{
                         $"  Calificación: {copia[indexMax].Calificacion}");
                         
         Console.WriteLine($"Aprovechamiento general: {promedio}");
-        Console.WriteLine($"Número total de aprobados: {numAprobados*100/10}");
-        Console.WriteLine($"Número total de reprobados: {numReprobados*100/10}");
+        Console.WriteLine("Aprobados {0}%", numAprobados*10);
+        Console.WriteLine("Reprobados {0}%", numReprobados*10);
     }
 }
