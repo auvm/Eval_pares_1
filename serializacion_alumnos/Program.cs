@@ -31,5 +31,20 @@ class MainClass{
 
        Console.WriteLine("Exito: Se serializó!");
 
+        //DESCERIALIZACIÓN BINARIA
+        //IFormatter f = new BinaryFormatter();
+        //canal de comunicación
+        stream = new FileStream("registroAlumnos.dat", FileMode.Open);
+        //instanciamos para acceder al objeto
+        Alumno[] copia = (Alumno[])f.Deserialize(stream);
+        //casteamos el stream a un registro, porque está como un objeto general
+        stream.Close();
+        stream.Dispose();
+        Console.WriteLine("\nSe deserealizo! ");
+        foreach (var alumno in copia)
+        {
+            Console.WriteLine(alumno);
+        }
+
     }
 }

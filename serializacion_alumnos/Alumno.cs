@@ -18,4 +18,9 @@ public class Alumno
         Apellido = a;
     }
 
+    public override string ToString()
+    {
+        string cadena = $"{Nombre} {Apellido}";
+        return cadena;
+    }
 }
