@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 
 class MainClass{
@@ -8,20 +6,28 @@ class MainClass{
         
         string nombre = string.Empty; 
         string apellido = string.Empty; 
-        int salir = 0;
-        Alumno[] lista = new Alumno[10];
-        int i = 0;
-        do{
-            Console.WriteLine("Nombre(s) del alumno: ");
-            nombre = Console.ReadLine();
-            Console.WriteLine("Apellidos del alumno: ");
-            apellido = Console.ReadLine();
-            Console.WriteLine("salir? si=1 no=0");
-            lista[i] = new Alumno(nombre, apellido);
-            i++;
-            salir = Convert.ToInt32(Console.ReadLine()) ;
-        }while(salir != 1);
-        
+        //int salir = 0;
+        Alumno[] lista = new Alumno[]{
+                new Alumno("Rodrigo", "Lita", 0),
+                new Alumno("Uriel", "Velasco", 0),
+                new Alumno("Jeannet", "Garcia", 0),
+                new Alumno("Antonio", "Santiago", 0),
+                new Alumno("Javier", "Rubin", 0),
+                new Alumno("Alejandro", "Garcia", 0),
+                new Alumno("Ahtziri", "Sara", 0),
+                new Alumno("Jacqueline", "Cisneros", 0),
+                new Alumno("Eliot", "Ibarra", 0),
+                new Alumno("Jose", "Montes", 0)
+        };
+        // for(int i = 0; i < 10; i++)
+        // {
+        //     Console.WriteLine("Nombre(s) del alumno {0}: ", i + 1);
+        //     nombre = Console.ReadLine();
+        //     Console.WriteLine("Apellidos del alumno {0}: ", i + 1);
+        //     apellido = Console.ReadLine();
+        //     lista[i] = new Alumno(nombre, apellido);
+        // }
+
 
        IFormatter f = new BinaryFormatter();
        Stream stream = new FileStream("registroAlumnos.dat", FileMode.Create);
@@ -41,10 +47,61 @@ class MainClass{
         stream.Close();
         stream.Dispose();
         Console.WriteLine("\nSe deserealizo! ");
-        foreach (var alumno in copia)
+        // Console.WriteLine("Lista de alumnos: ");
+        // foreach (var alumno in copia)
+        // {
+            // Console.WriteLine(alumno);
+        // }
+
+
+        Console.WriteLine("Ingrese las calificaiones: ");
+        for (int i = 0; i < copia.Length; i++)
         {
-            Console.WriteLine(alumno);
+            Console.Write($"{i+1}.- {copia[i].Nombre} {copia[i].Apellido}\t Calificación: ");
+            copia[i].Calificacion = Convert.ToDecimal(Console.ReadLine());
+            Console.WriteLine("");
         }
 
+        // Console.WriteLine("Lista calificaciones: ");
+        // foreach (var alumno in copia)
+        // {
+        //    Console.WriteLine(alumno);
+        // }
+
+        decimal max = 0;
+        int indexMax = 0;
+        decimal min = 10;
+        int indexMin = 0;
+        decimal sumatoria = 0;
+        decimal promedio = 0;
+        int numAprobados = 0;
+        int numReprobados = 0;
+        for (int i = 0; i < copia.Length; i++)
+        {
+            if(copia[i].Calificacion > max){
+                max = copia[i].Calificacion;
+                indexMax = i;
+            }
+            if(copia[i].Calificacion < min){
+                min = copia[i].Calificacion;
+                indexMin = i;
+            }
+            sumatoria += copia[i].Calificacion;
+            if(copia[i].Calificacion >= 6){
+                numAprobados++;
+            }else{
+                numReprobados++;
+            }
+
+        }
+        promedio = sumatoria/copia.Length;
+        Console.WriteLine($"El alumno con menor calificación: {copia[indexMin].Nombre} {copia[indexMin].Apellido}"+
+                        $" Calificación: {copia[indexMin].Calificacion}");
+        Console.WriteLine($"El alumno con mayor calificación:  {copia[indexMax].Nombre} {copia[indexMax].Apellido}"+
+                        $"  Calificación: {copia[indexMax].Calificacion}");
+                        
+        Console.WriteLine($"Aprovechamiento general: {promedio}");
+        Console.WriteLine($"Número total de aprobados: {numAprobados}");
+        Console.WriteLine($"Número total de reprobados: {numReprobados}");
     }
 }
